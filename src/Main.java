@@ -1,4 +1,4 @@
-//Welcome to my scratch pad for random programming problems I thought sounded fun or cool!
+//Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +14,10 @@ public class Main {
         //System.out.println(findBest(arr,2));
 
         //Find max Average
+        //Tested within online IDE
+
+        //Max ones binary III
+        //Tested within online IDE
 
 
 
@@ -104,6 +108,26 @@ public class Main {
 
         return answer/k;
     }
+    public static double MaxOnesBinary(int[] nums,int k){
+        int answer = 0;
+        int zero_count = 0;
+        int left = 0;
+        for(int right = 0; right <nums.length;right++){
+
+            if(nums[right] == 0){
+                zero_count++;
+            }
+            while(zero_count >k){
+                if(nums[left] == 0){
+                    zero_count--;
+                }
+                left++;
+            }
+            answer = Math.max(answer, right - left + 1);
+        }
+
+        return answer;
     }
+
 
 }
