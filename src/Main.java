@@ -3,8 +3,9 @@
 public class Main {
     public static void main(String[] args) {
         //System.out.println(longestBinary("1101100111"));
-        int[] tester = {10,5,2,6};
-        System.out.println(numSubarrayProductLessThanK(tester, 100));
+
+        //int[] tester = {10,5,2,6};
+        //System.out.println(numSubarrayProductLessThanK(tester, 100));
 
     }
     public static int longestBinary(String s){
