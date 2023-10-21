@@ -13,6 +13,7 @@ public class Main {
         //int[] arr = {1,1000000,1,1,1,1,1,100000000,99,2};
         //System.out.println(findBest(arr,2));
 
+        //Find max Average
 
 
 
@@ -82,6 +83,27 @@ public class Main {
         }
 
         return answer;
+    }
+    public static double MaxAvgSub(int[] nums, int k){
+        double curr = 0;
+        double answer = 0;
+        if(nums.length == 1){
+
+            return nums[0];
+        }
+        for(int i = 0;i<k;i++){
+            curr = curr + nums[i];
+        }
+        answer = curr;
+        int left = 0;
+        for(int j = k;j<nums.length;j++){
+            curr = curr - nums[left] + nums[j];
+            left = left + 1;
+            answer = Math.max(answer,curr);
+        }
+
+        return answer/k;
+    }
     }
 
 }
