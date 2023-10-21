@@ -2,10 +2,20 @@
 //I usually warm up or do these when I'm a bit bored
 public class Main {
     public static void main(String[] args) {
+        //Longest Binary
         //System.out.println(longestBinary("1101100111"));
 
+        //numArray
         //int[] tester = {10,5,2,6};
         //System.out.println(numSubarrayProductLessThanK(tester, 100));
+
+        //findBest Array
+        //int[] arr = {1,1000000,1,1,1,1,1,100000000,99,2};
+        //System.out.println(findBest(arr,2));
+
+
+
+
 
     }
     public static int longestBinary(String s){
@@ -50,6 +60,24 @@ public class Main {
             }
 
             answer = answer + right - left + 1;
+
+        }
+
+        return answer;
+    }
+    public static int findBest(int[] nums, int k){
+        //Find the sum of the chonkiest subarray with length k
+        int answer = 0;
+        int curr_sum = 0;
+        int left = 0;
+        for(int i = 0;i<k;i++){
+            curr_sum = curr_sum + nums[i];
+        }
+        answer = Math.max(curr_sum,answer);
+        for(int right = k;right<nums.length;right++){
+            curr_sum = curr_sum- nums[left] + nums[right];
+            left = left + 1;
+            answer = Math.max(curr_sum,answer);
 
         }
 
