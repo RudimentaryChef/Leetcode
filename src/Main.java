@@ -3,6 +3,8 @@
 public class Main {
     public static void main(String[] args) {
         //System.out.println(longestBinary("1101100111"));
+        int[] tester = {10,5,2,6};
+        System.out.println(numSubarrayProductLessThanK(tester, 100));
 
     }
     public static int longestBinary(String s){
@@ -41,18 +43,16 @@ public class Main {
         }
         for(int right = 0;right<nums.length;right++){
             curr = curr * nums[right];
-
-            if(curr >= k){
-                while(curr >= k){
-                    curr = curr/nums[left];
-                    left = left + 1;
-                }
+            while(curr >= k){
+                curr = curr/nums[left];
+                left = left + 1;
             }
+
             answer = answer + right - left + 1;
 
         }
 
-        return 0;
+        return answer;
     }
 
 }
