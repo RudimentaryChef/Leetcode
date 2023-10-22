@@ -203,6 +203,26 @@ public class Main {
         return answer;
 
     }
+    public static int minStartValue(int[] nums) {
+        int answer = 1;
+        int[] prefix = new int[nums.length];
+        prefix[0] = nums[0];
+        for(int i = 1;i<prefix.length;i++){
+            prefix[i] = prefix[i-1] + nums[i];
+        }
+        int currsum;
+        for(int i =0;i<nums.length;i++){
+            currsum = prefix[i];
+
+            if(currsum + answer < 1){
+                answer = currsum * -1  + 1;
+            }
+
+        }
+
+
+        return answer;
+    }
 
 
 
