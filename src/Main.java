@@ -180,6 +180,30 @@ public class Main {
         }
             return answer;
     }
+    public static int waysToSplitArray(int[] nums) {
+        int answer = 0;
+        long[] prefix = new long[nums.length];
+        prefix[0] = nums[0];
+        for(int i = 1;i< nums.length;i++){
+            prefix[i] = prefix[i-1] + nums[i];
+        }
+        long first;
+        long second;
+        long combo = prefix[nums.length -1];
+        System.out.println(Arrays.toString(prefix));
+        for(int split = 0;split <nums.length - 1;split++){
+            first = prefix[split];
+            second = combo - first;
+            if(first >= second ){
+                System.out.println(first + " " + second);
+                answer++;
+            }
+
+        }
+        return answer;
+
+    }
+
 
 
 }
