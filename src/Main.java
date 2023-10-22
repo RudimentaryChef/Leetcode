@@ -1,5 +1,9 @@
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
 public class Main {
@@ -22,9 +26,17 @@ public class Main {
         //Tested within online IDE
 
         //GPC ONE LIGHT WORK :))))
-        int[] arr = {99999,99,99,99,99,10000};
-        int target = 1000;
-        System.out.println(gpcone(arr,target));
+        //int[] arr = {99999,99,99,99,99,10000};
+        //int target = 1000;
+        //System.out.println(gpcone(arr,target));
+
+        //Prefix Array Example one
+        int[] nums = {1, 6, 3, 2, 7, 2};
+        int[][] queries = {{0,3},{2,5},{2,4}};
+        int limit = 13;
+        boolean[] answer = prefixOne(nums,queries,limit);
+        System.out.println(Arrays.toString(answer));
+
 
 
 
@@ -152,6 +164,18 @@ public class Main {
         }
 
         return answer;
+    }
+    public static boolean[] prefixOne(int[] nums, int[][] queries,int limit){
+        boolean[] answer = new boolean[queries.length];
+        int[] prefixSum = new int[nums.length];
+        prefixSum[0] = nums[0];
+        for(int i = 1;i<nums.length;i++){
+            prefixSum[i] = prefixSum[i-1] + nums[i];
+        }
+        for(int i = 0;i<queries.length;i++){
+            answer[i] = (prefixSum[queries[i][1]] - prefixSum[queries[i][0]] + nums[queries[i][0]]) < limit;
+        }
+            return answer;
     }
 
 
