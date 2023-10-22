@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
 public class Main {
@@ -18,6 +20,12 @@ public class Main {
 
         //Max ones binary III
         //Tested within online IDE
+
+        //GPC ONE LIGHT WORK :))))
+        int[] arr = {99999,99,99,99,99,10000};
+        int target = 1000;
+        System.out.println(gpcone(arr,target));
+
 
 
 
@@ -124,6 +132,23 @@ public class Main {
                 left++;
             }
             answer = Math.max(answer, right - left + 1);
+        }
+
+        return answer;
+    }
+    //Given an array find the length of longest subarray such that its not greater than the target
+    public static int gpcone(int[] nums, int target){
+        int answer = 0;
+        int left = 0;
+        int curr_max = 0;
+        for(int right = 0;right<nums.length;right++){
+            curr_max = curr_max + nums[right];
+            while(curr_max > target){
+                curr_max = curr_max - nums[left];
+                left++;
+            }
+            curr_max = right - left + 1;
+            answer = Math.max(answer,curr_max);
         }
 
         return answer;
