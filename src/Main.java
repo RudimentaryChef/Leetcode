@@ -31,11 +31,11 @@ public class Main {
         //System.out.println(gpcone(arr,target));
 
         //Prefix Array Example one
-        int[] nums = {1, 6, 3, 2, 7, 2};
-        int[][] queries = {{0,3},{2,5},{2,4}};
-        int limit = 13;
-        boolean[] answer = prefixOne(nums,queries,limit);
-        System.out.println(Arrays.toString(answer));
+        //int[] nums = {1, 6, 3, 2, 7, 2};
+        //int[][] queries = {{0,3},{2,5},{2,4}};
+        //int limit = 13;
+        //boolean[] answer = prefixOne(nums,queries,limit);
+        //System.out.println(Arrays.toString(answer));
 
 
 
@@ -166,6 +166,9 @@ public class Main {
         return answer;
     }
     public static boolean[] prefixOne(int[] nums, int[][] queries,int limit){
+        //return a boolean array that represents the answer to each query.
+        // A query is true if the sum of the subarray from x to y is less than limit,
+        // or false otherwise.
         boolean[] answer = new boolean[queries.length];
         int[] prefixSum = new int[nums.length];
         prefixSum[0] = nums[0];
