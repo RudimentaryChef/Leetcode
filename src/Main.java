@@ -261,6 +261,18 @@ public class Main {
 
 
     }
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode nextNode = null;
+        ListNode curr = head;
+        while(curr != null){
+            nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        return prev;
+    }
 
 
 
