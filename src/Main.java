@@ -3,6 +3,7 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
@@ -222,6 +223,28 @@ public class Main {
 
 
         return answer;
+    }
+    public static int middleLinked(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
+
+        }
+        return slow.val;
+    }
+    public static boolean cycleDetector(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow.equals(fast)){
+                return true;
+            }
+        }
+        return false;
     }
 
 
