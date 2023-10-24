@@ -311,6 +311,19 @@ public class Main {
         }
         return false;
     }
+    public int countElements(int[] arr) {
+        int answer = 0;
+        HashSet<Integer>  hol = new HashSet<Integer>();
+        for(int n:arr){
+            hol.add(n);
+        }
+        for(int n:arr){
+            if(hol.contains(n+1)){
+                answer++;
+            }
+        }
+        return answer;
+    }
 
 
 
