@@ -324,11 +324,12 @@ public class Main {
         }
         return answer;
     }
-    public static int mostK(int k, String s){
+    public static int lengthOfLongestSubstringKDistinct(String s, int k) {
         int answer = 0;
         int left = 0;
         HashMap<Character, Integer> hashy = new HashMap<>();
         for(int right =0;right<s.length();right++){
+
             if(!hashy.containsKey(s.charAt(right))){
                 hashy.put(s.charAt(right), 1);
             }
@@ -337,14 +338,15 @@ public class Main {
             }
 
             while(hashy.size() > k){
+                char leftChar = s.charAt(left);
                 //shift the left guy over one
-                hashy.put(s.charAt(left),hashy.get(left) -1);
-                if(hashy.get(left) == 0){
-                    hashy.remove(left);
+                hashy.put(leftChar,hashy.get(leftChar) -1);
+                if(hashy.get(leftChar) == 0){
+                    hashy.remove(leftChar);
                 }
                 left++;
             }
-            answer = Math.max(right - left,answer);
+            answer = Math.max(right - left + 1,answer);
         }
 
         return answer;
