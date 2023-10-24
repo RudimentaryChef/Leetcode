@@ -351,6 +351,31 @@ public class Main {
 
         return answer;
     }
+    public static List<Integer> intersection(int[][] nums) {
+        List<Integer> answer = new ArrayList<Integer>();
+        HashMap<Integer,Integer> hashy = new HashMap<>();
+        int req = nums.length;
+        for(int i = 0;i<nums.length;i++){
+            for(int check: nums[i]){
+
+
+                if(hashy.containsKey(check)){
+                    hashy.put(check, hashy.get(check) + 1);
+                }
+                else{
+                    hashy.put(check,1);
+                }
+            }
+        }
+
+        for(int n:hashy.keySet()){
+            if(hashy.get(n) == req ){
+                answer.add(n);
+            }
+        }
+        Collections.sort(answer);
+        return answer;
+    }
 
 
 
