@@ -1,11 +1,8 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
 public class Main {
@@ -286,6 +283,33 @@ public class Main {
         }
         return 'z';
 
+    }
+    //Given an integer array nums,
+    // find all the numbers x in nums that satisfy the following:
+    // x + 1 is not in nums, and x - 1 is not in nums.
+    public static List<Integer> hashSet(int[] nums){
+        List<Integer> answer = new ArrayList<>();
+        HashSet<Integer> holder = new HashSet<>();
+
+        for(int n : nums){
+            holder.add(n);
+        }
+        for(int n : nums){
+            if(!(holder.contains(n + 1) || holder.contains(n-1))){
+                answer.add(n);
+            }
+        }
+        return answer;
+    }
+    public static  boolean checkIfPangram(String sentence) {
+        HashSet<Character> set = new HashSet<>();
+        for(int i = 0;i<sentence.length();i++){
+            set.add(sentence.charAt(i));
+        }
+        if (set.size() == 26){
+            return true;
+        }
+        return false;
     }
 
 
