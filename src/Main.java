@@ -4,7 +4,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.HashMap;
+import java.util.Map;
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
 public class Main {
@@ -272,6 +273,19 @@ public class Main {
             curr = nextNode;
         }
         return prev;
+    }
+    public static char repeatedCharacter(String s) {
+        Map<Character, Integer> hashy = new HashMap<>();
+        for(int i = 0;i<s.length();i++){
+            if(hashy.containsKey(s.charAt(i))){
+                return s.charAt(i);
+            }
+            else{
+                hashy.put(s.charAt(i),1);
+            }
+        }
+        return 'z';
+
     }
 
 
