@@ -324,6 +324,31 @@ public class Main {
         }
         return answer;
     }
+    public static int mostK(int k, String s){
+        int answer = 0;
+        int left = 0;
+        HashMap<Character, Integer> hashy = new HashMap<>();
+        for(int right =0;right<s.length();right++){
+            if(!hashy.containsKey(s.charAt(right))){
+                hashy.put(s.charAt(right), 1);
+            }
+            else{
+                hashy.put(s.charAt(right), hashy.get(s.charAt(right)) + 1);
+            }
+
+            while(hashy.size() > k){
+                //shift the left guy over one
+                hashy.put(s.charAt(left),hashy.get(left) -1);
+                if(hashy.get(left) == 0){
+                    hashy.remove(left);
+                }
+                left++;
+            }
+            answer = Math.max(right - left,answer);
+        }
+
+        return answer;
+    }
 
 
 
