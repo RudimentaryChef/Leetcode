@@ -379,6 +379,7 @@ public class Main {
 
 
 
+
 }
 class ListNode{
         int val;
@@ -387,4 +388,29 @@ class ListNode{
             this.val = val;
         }
 
+}
+
+class KthLargest {
+    private static int k;
+    private static PriorityQueue<Integer> heap;
+
+    public KthLargest(int k, int[] nums) {
+        this.k = k;
+        this.heap = new PriorityQueue<>();
+        for(int n:nums){
+            heap.add(n);
+        }
+        while(heap.size() > k){
+            heap.remove();
+        }
+
+    }
+
+    public int add(int val) {
+        heap.add(val);
+        if(heap.size()>k){
+            heap.remove();
+        }
+        return heap.peek();
+    }
 }
