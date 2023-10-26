@@ -414,3 +414,32 @@ class KthLargest {
         return heap.peek();
     }
 }
+class MedianFinder {
+    PriorityQueue<Double> big = new PriorityQueue<>();
+    PriorityQueue<Double> small = new PriorityQueue<>(Comparator.reverseOrder());
+    public MedianFinder() {
+
+
+    }
+
+    public void addNum(int num) {
+        big.add((double)num);
+        small.add(big.remove());
+        if(small.size() > big.size()){
+            big.add(small.remove());
+        }
+
+
+    }
+
+    public double findMedian() {
+
+        if((big.size() + small.size()) %2 == 0){
+            return (big.peek() + small.peek())/2;
+        }
+        else{
+            return big.peek();
+        }
+    }
+
+}
