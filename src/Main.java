@@ -5,6 +5,7 @@ import java.util.*;
 
 //Welcome to my scratch pad for random programming problems that sounded fun or cool!
 //I usually warm up or do these when I'm a bit bored
+//These solutions are all mine
 public class Main {
     public static void main(String[] args) {
         //Longest Binary
