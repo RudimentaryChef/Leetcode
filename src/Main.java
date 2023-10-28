@@ -43,6 +43,31 @@ public class Main {
 
 
     }
+    public static long taskOfPairing(List<Long> freq) {
+        // Write your code here
+        long answer = 0;
+        if(freq.size() == 1){
+            return freq.get(0)/2;
+        }
+        for(int i = 0;i<freq.size() ;i++){
+
+            if(freq.get(i) >= 2){
+                answer = answer + freq.get(i)/2;
+                freq.set(i, freq.get(i) %2);
+
+            }
+            if(freq.get(i) == 1 && i != 0 && freq.get(i-1) == 1){
+                freq.set(i,freq.get(i) - 1);
+                freq.set(i - 1,freq.get(i - 1) - 1);
+                answer++;
+            }
+        }
+
+
+
+        return answer;
+
+    }
     public static int longestBinary(String s){
         //Problem:
         //You are given a binary string s (a string containing only "0" and "1").
