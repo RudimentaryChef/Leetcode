@@ -474,3 +474,56 @@ class MedianFinder {
     }
 
 }
+public class Result {
+
+    /*
+     * Complete the 'authEvents' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts 2D_STRING_ARRAY events as parameter.
+     */
+
+    public static List<Integer> authEvents(List<List<String>> events) {
+        // Write your code here
+        List<Integer> answer = new ArrayList<>();
+        String secret = "shhhhh";
+        System.out.println(hash("000A"));
+        for(int i = 0;i<events.size();i++){
+            if(events.get(i).get(0).equals("setPassword")){
+                secret = hash(events.get(i).get(1));
+            }
+            else{
+
+                if(secret.equals(events.get(i).get(1))){
+                    answer.add(1);
+                }
+                else if(1 > 2){ // how to figure if its one character off
+                    System.out.println("hi");
+                }
+                else{
+                    answer.add(0);
+                }
+            }
+        }
+        return answer;
+
+    }
+    public static String hash(String s){
+        String hashedversion = "";
+        int p = 131;
+        long M = (long) Math.pow(10,9) + 7;
+        int[] hashy = new int[s.length()];
+        for(int i = 0;i<s.length();i++){
+            hashy[i] = (int) s.charAt(i);
+        }
+        long left = 0;
+        for(int i = 0;i<hashy.length;i++){
+            left = left + (hashy[i] * (long) Math.pow(p,s.length() - 1 - i));
+        }
+        long func =(long) (left % M);
+        hashedversion = "" + func;
+        return hashedversion;
+    }
+
+
+}
