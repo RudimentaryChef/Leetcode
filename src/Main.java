@@ -56,13 +56,18 @@ public class Main {
                 freq.set(i, freq.get(i) %2);
 
             }
-            if(freq.get(i) == 1 && i != 0 && freq.get(i-1) == 1){
+            if(freq.get(i) == 1 && i != 0 && freq.get(i-1) > 0){
                 freq.set(i,freq.get(i) - 1);
                 freq.set(i - 1,freq.get(i - 1) - 1);
                 answer++;
             }
-        }
+            if(freq.get(i) == 1 && i != freq.size() -1 && freq.get(i+1) > 0){
+                freq.set(i,freq.get(i) - 1);
+                freq.set(i +1,freq.get(i + 1) - 1);
+                answer++;
+            }
 
+        }
 
 
         return answer;
