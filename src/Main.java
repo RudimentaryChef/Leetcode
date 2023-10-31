@@ -579,3 +579,34 @@ class stackStuff {
 
     }
 }
+class BackCompare {
+    public boolean backspaceCompare(String s, String t) {
+        StringBuilder S = new StringBuilder();
+        StringBuilder T = new StringBuilder();
+        for(char c: s.toCharArray()){
+            if(c == '#'){
+                if(!S.isEmpty()){
+                    S.deleteCharAt(S.length() - 1);
+                }
+            }
+            else{
+                S.append(c);
+            }
+
+        }
+        for(char c: t.toCharArray()){
+
+            if(c == '#'){
+                if(!T.isEmpty()){
+                    T.deleteCharAt(T.length() - 1);
+                }
+            }
+            else{
+                T.append(c);
+            }
+
+        }
+
+        return S.toString().equals(T.toString());
+    }
+}
