@@ -474,7 +474,8 @@ class MedianFinder {
     }
 
 }
-public class Result {
+
+
 
     /*
      * Complete the 'authEvents' function below.
@@ -482,7 +483,7 @@ public class Result {
      * The function is expected to return an INTEGER_ARRAY.
      * The function accepts 2D_STRING_ARRAY events as parameter.
      */
-
+class result {
     public static List<Integer> authEvents(List<List<String>> events) {
         // Write your code here
         List<Integer> answer = new ArrayList<>();
@@ -524,6 +525,57 @@ public class Result {
         hashedversion = "" + func;
         return hashedversion;
     }
+    public static int returnMiddle(List<Integer> arr){
+        int answer = 0;
+
+        return answer;
+    }
+    public static String removeDuplicates(String s) {
+        Stack<Character> hol = new Stack<Character>();
+        String answer = "";
+        char c;
+        for(int i = 0;i<s.length();i++){
+            c = s.charAt(i);
+            if(hol.isEmpty()){
+                hol.add(c);
+            }
+            else if(c == hol.peek()){
+                hol.pop();
+            }
+            else{
+                hol.add(c);
+            }
+        }
+        while(!hol.isEmpty()){
+            answer = hol.pop() + answer;
+        }
+        return answer;
+
+    }
 
 
+}
+class stackStuff {
+    public static String removeDuplicates(String s) {
+        Stack<Character> hol = new Stack<Character>();
+        String answer = "";
+        char c;
+        for(int i = 0;i<s.length();i++){
+            c = s.charAt(i);
+            if(hol.isEmpty()){
+                hol.add(c);
+            }
+            else if(c == hol.peek()){
+                hol.pop();
+            }
+            else{
+                hol.add(c);
+            }
+        }
+        while(!hol.isEmpty()){
+            answer = hol.pop() + answer;
+        }
+        return answer;
+
+    }
 }
