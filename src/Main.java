@@ -610,3 +610,21 @@ class BackCompare {
         return S.toString().equals(T.toString());
     }
 }
+
+class makeStringGood {
+    public String makeGood(String s) {
+        StringBuilder answer = new StringBuilder();
+        //plus or minus 32
+        char c;
+        for(int i = 0;i<s.length();i++){
+            c = s.charAt(i);
+            if(answer.isEmpty() || Math.abs(answer.charAt(answer.length() - 1) - c) != 32){
+                answer.append(c);
+            }
+            else{
+                answer.deleteCharAt(answer.length() - 1);
+            }
+        }
+        return answer.toString();
+    }
+}
