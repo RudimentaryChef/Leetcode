@@ -412,14 +412,7 @@ public class Main {
 
 
 }
-class ListNode{
-        int val;
-        ListNode next;
-        ListNode (int val) {
-            this.val = val;
-        }
 
-}
 
 class KthLargest {
     private static int k;
@@ -611,7 +604,7 @@ class BackCompare {
     }
 }
 
-class makeStringGood {
+class makeStringGoodg {
     public String makeGood(String s) {
         StringBuilder answer = new StringBuilder();
         //plus or minus 32
