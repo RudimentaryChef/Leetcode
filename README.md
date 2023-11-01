@@ -5,7 +5,8 @@ This is specifically for problems from tutorials, challenges or just problems I 
 
 Here is the link to my google sheets with most of my "Brain Teaser" style problems
 
-[https://docs.google.com/spreadsheets/d/1CTiSJ9l5jaRKOl1j7anA5VozW-MsqWiNMbrN2Cd36SY/edit?usp=sharing](url)
+https://docs.google.com/spreadsheets/d/1CTiSJ9l5jaRKOl1j7anA5VozW-MsqWiNMbrN2Cd36SY/edit?usp=sharing
+
 Here is the link to my profile with more of my problems:
 
 https://github.com/RudimentaryChef/Leetcode
