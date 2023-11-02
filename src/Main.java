@@ -621,3 +621,33 @@ class makeStringGoodg {
         return answer.toString();
     }
 }
+
+class LongestConseq{
+    public int longestConsecutive(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+        int answer = 1;
+        HashSet<Integer> hashy = new HashSet<>();
+        for(int n:nums){
+            hashy.add(n);
+        }
+        int curr_answer = 1;
+
+
+        for(int n:hashy){
+
+            while(hashy.contains(n + 1)){
+
+                curr_answer = curr_answer + 1;
+                n = n + 1;
+            }
+
+            answer = Math.max(curr_answer,answer);
+            curr_answer = 1;
+        }
+        return answer;
+
+
+    }
+}
