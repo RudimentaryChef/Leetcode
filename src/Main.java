@@ -677,7 +677,7 @@ class topKfreq {
 
     }
 }
-class Solution {
+class findclose {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         //the smaller the difference the higher in priority
         PriorityQueue<Integer> heap = new PriorityQueue<Integer>((n1,n2) ->{
