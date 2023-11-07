@@ -677,4 +677,27 @@ class topKfreq {
 
     }
 }
-
+class Solution {
+    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+        //the smaller the difference the higher in priority
+        PriorityQueue<Integer> heap = new PriorityQueue<Integer>((n1,n2) ->{
+            if(Math.abs(n1-x) == Math.abs(n2-x)){
+                return n2 - n1;
+            }
+            return Math.abs(n2 - x) - Math.abs(n1-x);
+        });
+        for(int n:arr){
+            heap.add(n);
+            //trims the heap
+            if(heap.size() > k){
+                heap.remove();
+            }
+        }
+        List<Integer> answer = new ArrayList<Integer>();
+        for(int i = 0;i<k;i++){
+            answer.add(heap.poll());
+        }
+        Collections.sort(answer);
+        return answer;
+    }
+}
