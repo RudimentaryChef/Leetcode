@@ -651,3 +651,30 @@ class LongestConseq{
 
     }
 }
+class topKfreq {
+    public int[] topKFrequent(int[] nums, int k) {
+        HashMap<Integer,Integer> hashy = new HashMap<Integer,Integer>();
+        int[] answer = new int[k];
+        for(int n: nums){
+            if(!hashy.containsKey(n)){
+                hashy.put(n, 1);
+            }
+            else{
+                hashy.put(n, hashy.get(n) + 1);
+            }
+        }
+        PriorityQueue<Integer> heap = new PriorityQueue<Integer>((n1,n2) -> hashy.get(n1) - hashy.get(n2));
+        for(int num:hashy.keySet()){
+            heap.add(num);
+            if(heap.size() > k){
+                heap.remove();
+            }
+        }
+        for(int i = 0;i<k;i++){
+            answer[i] = heap.poll();
+        }
+        return answer;
+
+    }
+}
+
