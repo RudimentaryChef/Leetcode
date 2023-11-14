@@ -36,7 +36,9 @@ public class Main {
         //int limit = 13;
         //boolean[] answer = prefixOne(nums,queries,limit);
         //System.out.println(Arrays.toString(answer));
-
+        //if(1){
+        //    System.out.println("hi");
+       // }
 
 
 
